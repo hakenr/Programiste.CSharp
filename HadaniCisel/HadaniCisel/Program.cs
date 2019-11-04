@@ -10,7 +10,7 @@ namespace HadaniCisel
 			Console.WriteLine($"Myslím si číslo od 0 do {horniMez}." +
 				$" Uhádneš, které to je?");
 
-			int cislo = new Random().Next(1001);
+			int cislo = new Random().Next(horniMez + 1);
 			int tipovaneCislo;
 			int pocetTipu = 0;
 
