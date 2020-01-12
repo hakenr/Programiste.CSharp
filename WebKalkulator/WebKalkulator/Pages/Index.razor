@@ -1,0 +1,11 @@
+﻿@page "/"
+
+<h1>Kalkulačka</h1>
+
+<input @bind="@scitanec1" /> + <input @bind="@scitanec2" /> = @(scitanec1 + scitanec2)
+
+@code
+{
+	int scitanec1 = 0;
+	int scitanec2 = 0;
+}
