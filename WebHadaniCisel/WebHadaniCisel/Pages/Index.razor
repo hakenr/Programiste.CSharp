@@ -1,0 +1,52 @@
+﻿@page "/"
+
+<h1>Uhádnu rychle, na jaké číslo myslíš...</h1>
+
+<p>Mysli si číslo od 0 do @maximum.</p>
+
+<p>Tipuju, že to je číslo: @tip</p>
+
+<p>
+	Je tvoje číslo
+	<button @onclick="Mensi">menší</button>
+	<button @onclick="Vetsi">větší</button>
+	?
+</p>
+
+<p>Vyčerpal jsem @pocitadlo pokusů.</p>
+
+@code
+{
+	int maximum = 1000000;
+	int dolniMez;
+	int horniMez;
+	int tip;
+	int pocitadlo;
+
+	// tato speciální metoda se pustí vždy jednou na začátku
+	protected override void OnInitialized()
+	{
+		dolniMez = 0;
+		horniMez = maximum + 1;
+		pocitadlo = 0;
+		Tipuj();
+	}
+
+	void Mensi()
+	{
+		horniMez = tip;
+		Tipuj();
+	}
+
+	void Vetsi()
+	{
+		dolniMez = tip;
+		Tipuj();
+	}
+
+	void Tipuj()
+	{
+		tip = dolniMez + (horniMez - dolniMez) / 2;
+		pocitadlo = pocitadlo + 1;
+	}
+}
