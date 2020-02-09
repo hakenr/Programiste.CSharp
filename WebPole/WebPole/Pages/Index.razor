@@ -1,0 +1,27 @@
+﻿@page "/"
+
+<h1>Pole - počítání číslic</h1>
+
+<input @bind-value="@vstupniText" @bind-value:event="oninput" @onkeyup="@Spocti" />
+
+@for (int i = 0; i < cetnostCislic.Length; i++)
+{
+	<p>Číslice @i je tam @cetnostCislic[i]x.</p>
+}
+
+@code
+{
+	string vstupniText = String.Empty;
+	int[] cetnostCislic = new int[10]; // pole je potřeba inicializovat - založit nové
+
+	void Spocti()
+	{
+		cetnostCislic = new int[10];  // pole můžeme vynulovat tím, že vytvoříme nové
+
+		foreach (var znak in vstupniText)
+		{
+			int cislice = Convert.ToInt32(znak.ToString());
+			cetnostCislic[cislice] = cetnostCislic[cislice] + 1;
+		}
+	}
+}
