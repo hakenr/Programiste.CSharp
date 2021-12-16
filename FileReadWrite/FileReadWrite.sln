@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32002.185
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileReadWrite", "FileReadWrite\FileReadWrite.csproj", "{6A6C61D1-C7EF-4AE6-9056-773499C3AFB4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{0AACFD30-4DFB-4239-A56F-1F7761E4F8D2}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6A6C61D1-C7EF-4AE6-9056-773499C3AFB4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A6C61D1-C7EF-4AE6-9056-773499C3AFB4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A6C61D1-C7EF-4AE6-9056-773499C3AFB4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A6C61D1-C7EF-4AE6-9056-773499C3AFB4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {163C846B-C6AF-46E3-9242-66DA9E1E7857}
+	EndGlobalSection
+EndGlobal
