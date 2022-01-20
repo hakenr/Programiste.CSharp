@@ -48,5 +48,5 @@ Budeme pokračovat se zdrojovými kódy z minulého cvičení - třídy `BankAcc
 
 ## Inspirace
 
-Kromě Microsoft dokumentace najdete možné řešení i zde:
-TODO
+Kromě Microsoft dokumentace najdete možné řešení i zde (třídy jsou v samostatných souborech):
+https://github.com/hakenr/Programiste.CSharp/tree/master/BankingOop2/BankingOop2
