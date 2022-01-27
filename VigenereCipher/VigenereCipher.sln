@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32112.339
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VigenereCipher", "VigenereCipher\VigenereCipher.csproj", "{7AF459F5-F997-4010-9A4D-F7FCF662114F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{D335EDEC-B75D-4060-AA37-20F50D4B4BC3}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7AF459F5-F997-4010-9A4D-F7FCF662114F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7AF459F5-F997-4010-9A4D-F7FCF662114F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7AF459F5-F997-4010-9A4D-F7FCF662114F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7AF459F5-F997-4010-9A4D-F7FCF662114F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6AD0C6F4-260F-4FA4-9395-0155AA46E58A}
+	EndGlobalSection
+EndGlobal
