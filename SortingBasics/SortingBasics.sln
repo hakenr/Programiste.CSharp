@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32112.339
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SortingBasics", "SortingBasics\SortingBasics.csproj", "{80D2209E-7EDF-4C23-93B9-D532FDAE7B2A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{0CAB4582-8EAE-456B-80A6-E80846F2FB83}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{80D2209E-7EDF-4C23-93B9-D532FDAE7B2A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{80D2209E-7EDF-4C23-93B9-D532FDAE7B2A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{80D2209E-7EDF-4C23-93B9-D532FDAE7B2A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{80D2209E-7EDF-4C23-93B9-D532FDAE7B2A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {02A0CE45-F6E2-4074-860B-2F41C91A6D61}
+	EndGlobalSection
+EndGlobal
