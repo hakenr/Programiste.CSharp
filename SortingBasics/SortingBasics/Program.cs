@@ -10,12 +10,12 @@ for (int i = 0; i < size; i++)
 
 PrintArray(inputData);
 
-BoubleSort(inputData);
+BubbleSort(inputData);
 
 PrintArray(inputData);
 
 
-void BoubleSort(int[] data)
+void BubbleSort(int[] data)
 {
 	int temp;
 	for (int j = 0; j <= data.Length - 2; j++)

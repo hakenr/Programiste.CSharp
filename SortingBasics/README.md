@@ -10,7 +10,7 @@ Snažte se najít odpověď na otázky:
 3. Jak fungují základní běžné algoritmy?
     * insertion-sort (řazení vkládáním)
     * selection-sort (řazení výběrem)
-	* bouble-sort (bublikové řazení)
+	* bubble-sort (bublikové řazení)
     * VOLITELNĚ: quick-sort (rychlé řazení)
 4. Proč jsou některé algoritmy řádově rychlejší než ostatní?
 
@@ -19,7 +19,7 @@ Snažte se najít odpověď na otázky:
 * [Wikipedia: Řazení výběrem](https://cs.wikipedia.org/wiki/%C5%98azen%C3%AD_v%C3%BDb%C4%9Brem)
 * [Wikipedia: Řazení vkládáním](https://cs.wikipedia.org/wiki/%C5%98azen%C3%AD_vkl%C3%A1d%C3%A1n%C3%ADm)
 * [Wikipedia: Bublinkové řazení](https://cs.wikipedia.org/wiki/Bublinkov%C3%A9_%C5%99azen%C3%AD)
-* [Algoritmy.net - Bouble sort](https://www.algoritmy.net/article/3/Bubble-sort)
+* [Algoritmy.net - Bubble sort](https://www.algoritmy.net/article/3/Bubble-sort)
 * [Algoritmy.net - Selection sort](https://www.algoritmy.net/article/4/Selection-sort)
 * [Algoritmy.net - Insertion sort](https://www.algoritmy.net/article/8/Insertion-sort)
 * ([Algoritmy.net - Quick sort](https://www.algoritmy.net/article/10/Quicksort))
@@ -49,12 +49,12 @@ for (int i = 0; i < size; i++)
 
 PrintArray(inputData);
 
-BoubleSort(inputData);
+BubbleSort(inputData);
 
 PrintArray(inputData);
 
 
-void BoubleSort(int[] data)
+void BubbleSort(int[] data)
 {
 	int temp;
 	for (int j = 0; j <= data.Length - 2; j++)
