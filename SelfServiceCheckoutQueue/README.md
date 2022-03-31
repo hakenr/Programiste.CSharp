@@ -14,10 +14,19 @@ Zákazníci (potřebné časy) | Počet pokladen | Potřebná doba
 2, 2, 3, 3, 4, 4 | 2 | 9
 žádný | 2 | 0
 
+![Screenshot](screenshot.png)
+
+Na vstupu předpokládejte:
+* potřebné časy jednotlivých zákazníků, např. ve formě pole `int[]`
+* počet pokladen - `int`
+
 ## Implementační typy
 * prozkoumejte datovou strukturu typu FIFO (First-In, First-Out), může se vám hodit
 * s výhodou lze využít uspořádání problému do tříd, kdy každá třída řeší svojí část problému
 * alternativně lze využít několika prostých polí
+
+## Challenges
+* Upravte uspořádání, aby bylo možné v průběhu času zákazníky do fronty přidávat (např. "po deseti jednotkách času přijde do fronty další zákazník, který potřebuje na odbavení u pokladny 7 jednotek času)
 
 ## Inspirace
 ```csharp
@@ -29,13 +38,13 @@ Test(new int[] { 1, 2, 3, 4, 5 }, 100, 5);
 Test(new int[] { 2, 2, 3, 3, 4, 4 }, 2, 9);
 Test(new int[0], 2, 0); // empty queue
 
-void Test(int[] customersProcessingTimes, int selfserviceCountersCount, int expectedTime)
+void Test(int[] customersProcessingTimes, int selfserviceCountersCount, int expectedTimeToVerify)
 {
 	var supermarket = new Supermarket(selfserviceCountersCount);
 	var computedTime = supermarket.ProcessCustomers(customersProcessingTimes);
 
 	Console.Write($"Customers: {customersProcessingTimes}, Counters: {selfserviceCountersCount}, Time: {computedTime}");
-	if (computedTime == expectedTime)
+	if (computedTime == expectedTimeToVerify)
 	{
 		Console.WriteLine("  ==> OK");
 	}

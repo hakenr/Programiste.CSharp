@@ -6,13 +6,13 @@ Test(new int[] { 1, 2, 3, 4, 5 }, 100, 5);
 Test(new int[] { 2, 2, 3, 3, 4, 4 }, 2, 9);
 Test(new int[0], 2, 0); // empty queue
 
-void Test(int[] customersProcessingTimes, int selfserviceCountersCount, int expectedTime)
+void Test(int[] customersProcessingTimes, int selfserviceCountersCount, int expectedTimeToVerify)
 {
 	var supermarket = new Supermarket(selfserviceCountersCount);
 	var computedTime = supermarket.ProcessCustomers(customersProcessingTimes);
 
 	Console.Write($"Customers: {customersProcessingTimes}, Counters: {selfserviceCountersCount}, Time: {computedTime}");
-	if (computedTime == expectedTime)
+	if (computedTime == expectedTimeToVerify)
 	{
 		Console.WriteLine("  ==> OK");
 	}
