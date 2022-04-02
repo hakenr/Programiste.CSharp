@@ -11,7 +11,7 @@ void Test(int[] customersProcessingTimes, int selfserviceCountersCount, int expe
 	var supermarket = new Supermarket(selfserviceCountersCount);
 	var computedTime = supermarket.ProcessCustomers(customersProcessingTimes);
 
-	Console.Write($"Customers: {customersProcessingTimes}, Counters: {selfserviceCountersCount}, Time: {computedTime}");
+	Console.Write($"Customers: {String.Join(" ", customersProcessingTimes)}, Counters: {selfserviceCountersCount}, Time: {computedTime}");
 	if (computedTime == expectedTimeToVerify)
 	{
 		Console.WriteLine("  ==> OK");

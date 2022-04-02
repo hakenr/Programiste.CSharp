@@ -4,6 +4,8 @@ Máme supermarket a v něm samoobslužné podkladny. Známe počet pokladen, vš
 
 Sestavte aplikaci, která bude počítat, za jak dlouho bude odbaven poslední zákazník.
 
+Příklady:
+
 Zákazníci (potřebné časy) | Počet pokladen | Potřebná doba
 ------------------------------|-----------------|----------------
 5, 3, 4 | 1 | 12
@@ -29,6 +31,7 @@ Na vstupu předpokládejte:
 * Upravte uspořádání, aby bylo možné v průběhu času zákazníky do fronty přidávat (např. "po deseti jednotkách času přijde do fronty další zákazník, který potřebuje na odbavení u pokladny 7 jednotek času)
 
 ## Inspirace
+Neoptimalizovaný základní postup algoritmu "v časových taktech":
 ```csharp
 Test(new int[] { 5, 3, 4 }, 1, 12);
 Test(new int[] { 10, 2, 3, 3 }, 2, 10);
@@ -43,7 +46,7 @@ void Test(int[] customersProcessingTimes, int selfserviceCountersCount, int expe
 	var supermarket = new Supermarket(selfserviceCountersCount);
 	var computedTime = supermarket.ProcessCustomers(customersProcessingTimes);
 
-	Console.Write($"Customers: {customersProcessingTimes}, Counters: {selfserviceCountersCount}, Time: {computedTime}");
+	Console.Write($"Customers: {String.Join(" ", customersProcessingTimes)}, Counters: {selfserviceCountersCount}, Time: {computedTime}");
 	if (computedTime == expectedTimeToVerify)
 	{
 		Console.WriteLine("  ==> OK");
