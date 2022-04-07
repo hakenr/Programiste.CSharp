@@ -8,7 +8,7 @@ Jednotlivé složky (tokeny) oddělujme mezerníkem.
 
 Např.
 * `3 4 +` odpovídá výrazu `3 + 4`.
-* `2 3 4 + *` odpovídá výrazu `(3 + 4) * 2`
+* `2 3 4 + *` odpovídá výrazu `2 * (3 + 4)`
 * `5 1 2 + 4 * + 3 -` odpovídá výrazu `5 + ((1 + 2) * 4) - 3`
 
 ## Úloha
