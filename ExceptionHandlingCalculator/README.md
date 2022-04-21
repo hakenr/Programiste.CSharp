@@ -11,7 +11,7 @@ try
 {
 	result = num1 / num2;
 }
-catch (DivisionByZeroException ex)
+catch (DivideByZeroException ex)
 {
 	Console.WriteLine("Dělení nulou není dovoleno.");
 }
