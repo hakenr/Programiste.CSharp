@@ -1,5 +1,5 @@
 ﻿# Binární vyhledávací strom (Binary Search Tree, BST)
-![B S T](BST.png)
+![BST](bst.png)
 [Binární vyhledávací strom](https://cs.wikipedia.org/wiki/Bin%C3%A1rn%C3%AD_vyhled%C3%A1vac%C3%AD_strom) je datová struktura, která:
 * je složená z uzlů (Node),
 * každý uzel může mít dva potomky (pravého a levého),
