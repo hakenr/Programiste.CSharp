@@ -17,3 +17,29 @@ Zadá-li tedy uživatel např. číslo 8, vznikne posloupnost 8, 4, 2, 1, tj. bu
 2. Zjistěte nejmenší číslo, pro které je potřeba k vygenerování posloupnosti učinit alespoň 500 kroků.
 3. Jak je z ilustračního příkladu v zadání vidět, pro zadané číslo 9 je ve vygenerované posloupnosti největší hodnotou 52. Najděte, které z čísel 2 až 100000 má ve své posloupnosti absolutně nejvyšší hodnotu ze všech a jaká hodnota to je. 
 4. Najděte nejmenší tři bezprostředně po sobě jdoucí čísla taková, že k vygenerování posloupností z nich je zapotřebí stejný počet kroků.
+
+## Inspirace
+```csharp
+int number = 9;
+Console.WriteLine(number);
+
+int step = 0;
+
+while (number != 1)
+{
+	if (number % 2 == 0)
+	{
+		number = number / 2;
+	}
+	else
+	{
+		number = number * 3 + 1;
+	}
+
+	Console.WriteLine(number);
+
+	step++;
+}
+
+Console.WriteLine("Number of steps: " + step);
+```
