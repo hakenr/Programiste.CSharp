@@ -2,7 +2,7 @@
 {
 	public class HerniStrategieTahniPrvniMoznouFigurkou : HerniStrategie
 	{
-		private readonly Hra hra;
+		protected readonly Hra hra;
 
 		public HerniStrategieTahniPrvniMoznouFigurkou(Hra hra)
 		{

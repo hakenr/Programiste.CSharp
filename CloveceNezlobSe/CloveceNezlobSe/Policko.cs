@@ -51,6 +51,11 @@
 			return figurkyNaPolicku.Where(figurka => figurka.Hrac == hrac);
 		}
 
+		public IEnumerable<Figurka> ZjistiFigurkyProtihracu(Hrac hrac)
+		{
+			return figurkyNaPolicku.Where(figurka => figurka.Hrac != hrac);
+		}
+
 		public bool JeObsazeno()
 		{
 			return !dovolitViceFigurek && (figurkyNaPolicku.Count != 0);

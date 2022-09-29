@@ -64,6 +64,30 @@
 			cilovePolicko.PolozFigurku(figurka);
 		}
 
+		public override Policko? ZjistiCilovePolicko(Figurka figurka, int hod)
+		{
+			if (figurka.Policko == null)
+			{
+				return null; // figurka není na herní ploše
+			}
+
+			int indexStavajicihoPolicka = policka.IndexOf(figurka.Policko);
+			int indexCile = (indexStavajicihoPolicka + hod);
+
+			if (indexCile < 0)
+			{
+				// figurka se vrací na začátek
+				indexCile = 0;
+			}
+
+			if (indexCile >= policka.Count)
+			{
+				return null;
+			}
+
+			return policka[indexCile];
+		}
+
 		public override bool MuzuTahnout(Figurka figurka, int hod)
 		{
 			if (figurka.Policko == null)
