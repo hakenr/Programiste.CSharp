@@ -3,8 +3,9 @@
 	public class Hra
 	{
 		public HerniPlan HerniPlan { get; private set; }
+		public List<Hrac> Vitezove { get; } = new();
 		List<Hrac> hraci = new();
-
+		
 		public Hra(HerniPlan herniPlan)
 		{
 			this.HerniPlan = herniPlan;
@@ -16,10 +17,14 @@
 			{
 				throw new Exception("Hra je plná, maximální počet hráčů herního plánu byl překročen.");
 			}
-
 			hraci.Add(hrac);
 		}
 
+		public void NastavNahodnePoradiHracu()
+		{
+			hraci = hraci.OrderBy(hrac => Guid.NewGuid()).ToList();
+		}
+		
 		public void Start()
 		{
 			// TODO Kontrola vstupních podmínek pro zahájení hry.
@@ -32,13 +37,12 @@
 			}
 
 			Kostka kostka = new Kostka(pocetSten: 6);
-			List<Hrac> hraciKtereMajiVsechnyFigurkyVDomecku = new();
 
 			while (true)
 			{
 				foreach (var hrac in hraci)
 				{
-					if (hraciKtereMajiVsechnyFigurkyVDomecku.Contains(hrac))
+					if (Vitezove.Contains(hrac))
 					{
 						continue;
 					}
@@ -64,12 +68,12 @@
 
 						if (hrac.MaVsechnyFigurkyVDomecku())
 						{
-							hraciKtereMajiVsechnyFigurkyVDomecku.Add(hrac);
+							Vitezove.Add(hrac);
 						}
 					}
 				}
 				
-				if (hraciKtereMajiVsechnyFigurkyVDomecku.Count == hraci.Count)
+				if (Vitezove.Count == hraci.Count)
 				{
 					Console.WriteLine("Hra skončila.");
 					break;
@@ -77,9 +81,9 @@
 			}
 
 			Console.WriteLine("Výsledky hry:");
-			for (int i = 0; i < hraciKtereMajiVsechnyFigurkyVDomecku.Count; i++)
+			for (int i = 0; i < Vitezove.Count; i++)
 			{
-				Console.WriteLine($"{i + 1}. {hraciKtereMajiVsechnyFigurkyVDomecku[i].Jmeno}");
+				Console.WriteLine($"{i + 1}. {Vitezove[i].Jmeno}");
 			}
 		}
 
