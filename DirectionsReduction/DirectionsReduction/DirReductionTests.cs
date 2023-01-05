@@ -8,7 +8,7 @@ namespace DirReduction
 		{
 			string[] a = new string[] { "NORTH", "SOUTH", "SOUTH", "EAST", "WEST", "NORTH", "WEST" };
 			string[] b = new string[] { "WEST" };
-			Assert.AreEqual(b, DirReduction.dirReduc(a));
+			CollectionAssert.AreEqual(b, DirReduction.dirReduc(a));
 		}
 		
 		[TestMethod]
@@ -16,7 +16,7 @@ namespace DirReduction
 		{
 			string[] a = new string[] { "NORTH", "WEST", "SOUTH", "EAST" };
 			string[] b = new string[] { "NORTH", "WEST", "SOUTH", "EAST" };
-			Assert.AreEqual(b, DirReduction.dirReduc(a));
+			CollectionAssert.AreEqual(b, DirReduction.dirReduc(a));
 		}
 	}
 }
