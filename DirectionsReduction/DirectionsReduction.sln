@@ -3,7 +3,12 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33205.214
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DirectionsReduction", "DirectionsReduction\DirectionsReduction.csproj", "{7F9A7670-A6C3-41C1-B5A2-E9913E15D6F4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DirectionsReduction", "DirectionsReduction\DirectionsReduction.csproj", "{7F9A7670-A6C3-41C1-B5A2-E9913E15D6F4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{DEC1CF2E-565A-459F-91D4-7A93A957F0F8}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
