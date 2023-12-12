@@ -66,7 +66,7 @@ for (int i = 2; i < lines.Length; i++)
 	var currencyName = segments[1];
 	var amount = Convert.ToDecimal(segments[2]);
 	var currencyCode = segments[3];
-	var exchangeRate = segments[4];
+	var exchangeRate = Convert.ToDecimal(segments[4]);
 
 	Console.Write(country.PadRight(25));
 	Console.Write(currencyName.PadRight(15));
