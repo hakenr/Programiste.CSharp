@@ -9,7 +9,7 @@ statistiku četnosti znaků ve vstupním textu.
 
 ## Implementační instrukce (nezávazné)
 1. Vytvořte třídu (`class DuplicateEncoder`), která bude mít konstruktor s jedním parametrem (vstupní text).
-1. Konsturktor uloží vstupní text do privátního fieldu třídy a zároveň rovnou spočítá statistiku znaků v textu.
+1. Konstruktor uloží vstupní text do privátního fieldu třídy a zároveň rovnou spočítá statistiku znaků v textu.
 	Statistiku reprezentujte vhodnou datovou strukturou (např. `Dictionary<char, int>`) a uložte ji jako privátní field třídy.
 1. Přidejte metodu `Encode`, která použije data z privátních fieldů a provede sestavení výstupního kódování.
 1. Přidejte metodu `PrintStatistics`, která použije data třídy a vypíše statistiku četnosti znaků.
