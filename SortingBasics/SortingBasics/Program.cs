@@ -20,7 +20,7 @@ void BubbleSort(int[] data)
 	int temp;
 	for (int j = 0; j <= data.Length - 2; j++)
 	{
-		for (int i = 0; i <= data.Length - 2; i++)
+		for (int i = 0; i <= j; i++)
 		{
 			if (data[i] > data[i + 1])
 			{
