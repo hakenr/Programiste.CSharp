@@ -1,0 +1,211 @@
+Město1,Město2,Vzdálenost
+Plzeň,Brno,296
+Olomouc,Brno,77
+Liberec,Brno,309
+České Budějovice,Brno,217
+Hradec Králové,Brno,167
+Ústí nad Labem,Brno,298
+Pardubice,Brno,146
+Zlín,Brno,96
+Ostrava,Brno,170
+Karlovy Vary,Brno,337
+Jihlava,Brno,93
+Praha,Brno,209
+Paskov,Brno,176
+Kladno,Brno,240
+Brno,Plzeň,296
+Olomouc,Plzeň,370
+Liberec,Plzeň,198
+České Budějovice,Plzeň,137
+Hradec Králové,Plzeň,209
+Ústí nad Labem,Plzeň,181
+Pardubice,Plzeň,214
+Zlín,Plzeň,389
+Ostrava,Plzeň,463
+Karlovy Vary,Plzeň,82
+Jihlava,Plzeň,218
+Praha,Plzeň,91
+Paskov,Plzeň,469
+Kladno,Plzeň,99
+Brno,Olomouc,77
+Plzeň,Olomouc,369
+Liberec,Olomouc,237
+České Budějovice,Olomouc,290
+Hradec Králové,Olomouc,140
+Ústí nad Labem,Olomouc,371
+Pardubice,Olomouc,135
+Zlín,Olomouc,62
+Ostrava,Olomouc,94
+Karlovy Vary,Olomouc,410
+Jihlava,Olomouc,167
+Praha,Olomouc,282
+Paskov,Olomouc,100
+Kladno,Olomouc,313
+Brno,Liberec,307
+Plzeň,Liberec,200
+Olomouc,Liberec,236
+České Budějovice,Liberec,250
+Hradec Králové,Liberec,97
+Ústí nad Labem,Liberec,96
+Pardubice,Liberec,154
+Zlín,Liberec,400
+Ostrava,Liberec,440
+Karlovy Vary,Liberec,234
+Jihlava,Liberec,229
+Praha,Liberec,109
+Paskov,Liberec,451
+Kladno,Liberec,135
+Brno,České Budějovice,216
+Plzeň,České Budějovice,137
+Olomouc,České Budějovice,290
+Liberec,České Budějovice,249
+Hradec Králové,České Budějovice,253
+Ústí nad Labem,České Budějovice,238
+Pardubice,České Budějovice,193
+Zlín,České Budějovice,308
+Ostrava,České Budějovice,383
+Karlovy Vary,České Budějovice,218
+Jihlava,České Budějovice,138
+Praha,České Budějovice,150
+Paskov,České Budějovice,388
+Kladno,České Budějovice,181
+Brno,Hradec Králové,168
+Plzeň,Hradec Králové,208
+Olomouc,Hradec Králové,139
+Liberec,Hradec Králové,98
+České Budějovice,Hradec Králové,253
+Ústí nad Labem,Hradec Králové,190
+Pardubice,Hradec Králové,24
+Zlín,Hradec Králové,206
+Ostrava,Hradec Králové,239
+Karlovy Vary,Hradec Králové,241
+Jihlava,Hradec Králové,113
+Praha,Hradec Králové,116
+Paskov,Hradec Králové,244
+Kladno,Hradec Králové,143
+Brno,Ústí nad Labem,296
+Plzeň,Ústí nad Labem,181
+Olomouc,Ústí nad Labem,370
+Liberec,Ústí nad Labem,96
+České Budějovice,Ústí nad Labem,239
+Hradec Králové,Ústí nad Labem,190
+Pardubice,Ústí nad Labem,196
+Zlín,Ústí nad Labem,389
+Ostrava,Ústí nad Labem,463
+Karlovy Vary,Ústí nad Labem,121
+Jihlava,Ústí nad Labem,218
+Praha,Ústí nad Labem,92
+Paskov,Ústí nad Labem,469
+Kladno,Ústí nad Labem,86
+Brno,Pardubice,146
+Plzeň,Pardubice,213
+Olomouc,Pardubice,135
+Liberec,Pardubice,155
+České Budějovice,Pardubice,258
+Hradec Králové,Pardubice,24
+Ústí nad Labem,Pardubice,196
+Zlín,Pardubice,202
+Ostrava,Pardubice,235
+Karlovy Vary,Pardubice,246
+Jihlava,Pardubice,90
+Praha,Pardubice,121
+Paskov,Pardubice,240
+Kladno,Pardubice,148
+Brno,Zlín,96
+Plzeň,Zlín,388
+Olomouc,Zlín,63
+Liberec,Zlín,401
+České Budějovice,Zlín,309
+Hradec Králové,Zlín,206
+Ústí nad Labem,Zlín,390
+Pardubice,Zlín,201
+Ostrava,Zlín,125
+Karlovy Vary,Zlín,429
+Jihlava,Zlín,186
+Praha,Zlín,301
+Paskov,Zlín,131
+Kladno,Zlín,332
+Brno,Ostrava,169
+Plzeň,Ostrava,462
+Olomouc,Ostrava,98
+Liberec,Ostrava,434
+České Budějovice,Ostrava,383
+Hradec Králové,Ostrava,238
+Ústí nad Labem,Ostrava,463
+Pardubice,Ostrava,234
+Zlín,Ostrava,124
+Karlovy Vary,Ostrava,502
+Jihlava,Ostrava,259
+Praha,Ostrava,375
+Paskov,Ostrava,13
+Kladno,Ostrava,406
+Brno,Karlovy Vary,337
+Plzeň,Karlovy Vary,81
+Olomouc,Karlovy Vary,411
+Liberec,Karlovy Vary,233
+České Budějovice,Karlovy Vary,218
+Hradec Králové,Karlovy Vary,240
+Ústí nad Labem,Karlovy Vary,122
+Pardubice,Karlovy Vary,246
+Zlín,Karlovy Vary,430
+Ostrava,Karlovy Vary,504
+Jihlava,Karlovy Vary,259
+Praha,Karlovy Vary,128
+Paskov,Karlovy Vary,510
+Kladno,Karlovy Vary,105
+Brno,Jihlava,93
+Plzeň,Jihlava,217
+Olomouc,Jihlava,167
+Liberec,Jihlava,230
+České Budějovice,Jihlava,138
+Hradec Králové,Jihlava,112
+Ústí nad Labem,Jihlava,219
+Pardubice,Jihlava,90
+Zlín,Jihlava,186
+Ostrava,Jihlava,261
+Karlovy Vary,Jihlava,258
+Praha,Jihlava,130
+Paskov,Jihlava,266
+Kladno,Jihlava,161
+Brno,Praha,208
+Plzeň,Praha,92
+Olomouc,Praha,282
+Liberec,Praha,110
+České Budějovice,Praha,151
+Hradec Králové,Praha,116
+Ústí nad Labem,Praha,93
+Pardubice,Praha,121
+Zlín,Praha,300
+Ostrava,Praha,375
+Karlovy Vary,Praha,127
+Jihlava,Praha,130
+Paskov,Praha,380
+Kladno,Praha,31
+Brno,Paskov,176
+Plzeň,Paskov,469
+Olomouc,Paskov,104
+Liberec,Paskov,449
+České Budějovice,Paskov,389
+Hradec Králové,Paskov,245
+Ústí nad Labem,Paskov,470
+Pardubice,Paskov,240
+Zlín,Paskov,131
+Ostrava,Paskov,14
+Karlovy Vary,Paskov,509
+Jihlava,Paskov,266
+Praha,Paskov,382
+Kladno,Paskov,412
+Brno,Kladno,240
+Plzeň,Kladno,100
+Olomouc,Kladno,314
+Liberec,Kladno,135
+České Budějovice,Kladno,183
+Hradec Králové,Kladno,143
+Ústí nad Labem,Kladno,87
+Pardubice,Kladno,149
+Zlín,Kladno,333
+Ostrava,Kladno,407
+Karlovy Vary,Kladno,105
+Jihlava,Kladno,162
+Praha,Kladno,31
+Paskov,Kladno,412

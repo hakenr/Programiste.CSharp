@@ -1,0 +1,27 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<OutputType>Exe</OutputType>
+		<TargetFramework>net8.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<None Remove="silnicni_vzdalenosti_mesta_full.csv" />
+		<None Remove="silnicni_vzdalenosti_mesta_oneway.csv" />
+		<None Remove="silnicni_vzdalenosti_mesta_reduced.csv" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Content Include="silnicni_vzdalenosti_mesta_full.csv">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Content>
+		<Content Include="silnicni_vzdalenosti_mesta_reduced.csv">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Content>
+		<Content Include="silnicni_vzdalenosti_mesta_oneway.csv">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Content>
+	</ItemGroup>
+
+</Project>
