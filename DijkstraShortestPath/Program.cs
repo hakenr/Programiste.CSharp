@@ -1,4 +1,9 @@
-﻿Dictionary<string, Dictionary<string, int>> cityGraph = new Dictionary<string, Dictionary<string, int>>();
+﻿using System.Text;
+
+Dictionary<string, Dictionary<string, int>> cityGraph = new Dictionary<string, Dictionary<string, int>>();
+
+Console.InputEncoding = Encoding.UTF8;
+Console.OutputEncoding = Encoding.UTF8;
 
 // Načtení CSV dat do grafu
 LoadGraphFromCsv("silnicni_vzdalenosti_mesta_reduced.csv");
