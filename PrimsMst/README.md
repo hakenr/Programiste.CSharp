@@ -36,15 +36,8 @@ Představte si, že jste pověřeni návrhem minimální silniční sítě, kter
    - Všechna města lze spojit přímou vzdušnou čarou.
 
 4. **Výpočet vzdálenosti**:
-   Pro výpočet vzdálenosti mezi dvěma městy použijte [Haversinovu formuli](https://en.wikipedia.org/wiki/Haversine_formula):
-   \[
-   d = 2r \cdot \arcsin\left(\sqrt{\sin^2\left(\frac{\phi_2 - \phi_1}{2}\right) + \cos(\phi_1) \cdot \cos(\phi_2) \cdot \sin^2\left(\frac{\lambda_2 - \lambda_1}{2}\right)}\right)
-   \]
-   Kde:
-   - \( \phi_1, \phi_2 \): zeměpisná šířka obou bodů v radiánech,
-   - \( \lambda_1, \lambda_2 \): zeměpisná délka obou bodů v radiánech,
-   - \( r \): poloměr Země (6371 km).
-
+   Pro výpočet vzdálenosti mezi dvěma městy použijte [Haversinovu formuli](https://en.wikipedia.org/wiki/Haversine_formula).
+![](Haversin.png)
 
 ### Challenge
 Ze vstupního souboru použijte jen tolik záznamů, kolik váš program zvládne zpracovat do 1 minuty. Kolik to bude? Jakou asymtotickou časovou složitost má váš algoritmus?
