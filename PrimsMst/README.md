@@ -6,6 +6,7 @@ Představte si, že jste pověřeni návrhem minimální silniční sítě, kter
 
 #### Popis Primova algoritmu:
 ![Prim](https://upload.wikimedia.org/wikipedia/commons/9/9b/PrimAlgDemo.gif)
+
 [Primův algoritmus](https://en.wikipedia.org/wiki/Prim%27s_algorithm) se používá k nalezení minimální kostry (Minimum Spanning Tree, MST) v grafu (obrázek linkován z Wikipedie). Výsledná kostra:
 1. Propojuje všechny vrcholy (města) grafu.
 2. Minimalizuje celkové náklady (součet vzdáleností mezi propojenými městy).
