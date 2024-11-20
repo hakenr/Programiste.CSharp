@@ -39,5 +39,14 @@ Představte si, že jste pověřeni návrhem minimální silniční sítě, kter
    Pro výpočet vzdálenosti mezi dvěma městy použijte [Haversinovu formuli](https://en.wikipedia.org/wiki/Haversine_formula).
 ![](Haversin.png)
 
+### Příklad výstupu pro první 4 města:
+```
+Hrana 1: Tokyo - Guangzhou (2 902,73 km)
+Hrana 2: Guangzhou - Jakarta (3 332,72 km)
+Hrana 3: Guangzhou - Delhi (3 642,16 km)
+Celková délka: 9 877,61 km
+Cas vypoctu: 36 ms
+```
+
 ### Challenge
 Ze vstupního souboru použijte jen tolik záznamů, kolik váš program zvládne zpracovat do 1 minuty. Kolik to bude? Jakou asymtotickou časovou složitost má váš algoritmus?

@@ -11,7 +11,7 @@ class Program
 		var sw = System.Diagnostics.Stopwatch.StartNew();
 
 		// 1. Načtení dat z CSV
-		var cities = LoadCitiesFromCsv("worldcities.csv", count: 7000);
+		var cities = LoadCitiesFromCsv("worldcities.csv", count: 4);
 
 		// 2. Výpočet minimální silniční sítě
 		var result = FindMinimumRoadNetwork(cities);
@@ -91,7 +91,7 @@ class Program
 			if (!visited.Contains(edge.City2))
 			{
 				visited.Add(edge.City2);
-				Console.WriteLine($"Přidávám hranu {visited.Count}: {edge.City1} - {edge.City2} ({edge.Distance:N2} km)");
+				Console.WriteLine($"Hrana {visited.Count - 1}: {edge.City1} - {edge.City2} ({edge.Distance:N2} km)");
 				edges.Add((edge.City1, edge.City2, edge.Distance));
 
 				// Přidáme nové hrany z právě přidaného města
@@ -112,7 +112,6 @@ class Program
 	// Výstup výsledků
 	static void PrintResult(List<(string City1, string City2, double Distance)> result)
 	{
-		Console.WriteLine("Minimální silniční síť:");
 		double totalDistance = 0;
 
 		foreach (var edge in result)
