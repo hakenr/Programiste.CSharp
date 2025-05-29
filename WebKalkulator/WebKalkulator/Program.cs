@@ -1,3 +1,5 @@
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.Hosting;
 using WebKalkulator;
 
 var builder = Host.CreateDefaultBuilder(args)
