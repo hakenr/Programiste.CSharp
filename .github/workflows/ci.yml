@@ -1,0 +1,73 @@
+name: Continuous Integration
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: '9.0.x'
+        
+    - name: List all solutions
+      run: |
+        echo "Found the following solution files:"
+        find . -name "*.sln" -type f | sort
+        echo "Total solutions: $(find . -name "*.sln" -type f | wc -l)"
+        
+    - name: Build all solutions
+      shell: bash
+      run: |
+        set -e
+        echo "Building all solutions in the repository..."
+        
+        # Create arrays to track results
+        declare -a failed_solutions=()
+        declare -a successful_solutions=()
+        
+        # Build each solution
+        while IFS= read -r solution; do
+          echo ""
+          echo "========================================"
+          echo "Building solution: $solution"
+          echo "========================================"
+          
+          if dotnet build "$solution" --configuration Release --verbosity minimal; then
+            echo "✅ Build successful for $solution"
+            successful_solutions+=("$solution")
+          else
+            echo "❌ Build failed for $solution"
+            failed_solutions+=("$solution")
+          fi
+        done < <(find . -name "*.sln" -type f | sort)
+        
+        # Print summary
+        echo ""
+        echo "========================================"
+        echo "BUILD SUMMARY"
+        echo "========================================"
+        echo "Total solutions: $((${#successful_solutions[@]} + ${#failed_solutions[@]}))"
+        echo "Successful builds: ${#successful_solutions[@]}"
+        echo "Failed builds: ${#failed_solutions[@]}"
+        
+        if [ ${#failed_solutions[@]} -gt 0 ]; then
+          echo ""
+          echo "Failed solutions:"
+          for solution in "${failed_solutions[@]}"; do
+            echo "  - $solution"
+          done
+          exit 1
+        else
+          echo ""
+          echo "🎉 All solutions built successfully!"
+        fi
