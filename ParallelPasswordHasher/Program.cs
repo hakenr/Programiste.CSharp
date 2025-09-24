@@ -21,7 +21,7 @@ byte[] HashPbkdf2(string password, int iterations) =>
 		iterations: iterations,
 		hashAlgorithm: HashAlgorithmName.SHA256,
 		outputLength: 32);
-
+n;
 // A) SEKVENCE (baseline) – HOTOVO
 IDictionary<string, string> HashAllSequential(IReadOnlyList<string> passwords, int iterations)
 {
