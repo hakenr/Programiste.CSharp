@@ -1,10 +1,10 @@
 ﻿namespace CloveceNezlobSe
 {
-	public class HerniStrategieAi : HerniStrategie
+	public class HerniStrategieInteraktivni : HerniStrategie
 	{
 		private readonly Hra hra;
 
-		public HerniStrategieAi(Hra hra)
+		public HerniStrategieInteraktivni(Hra hra)
 		{
 			this.hra = hra;
 		}
@@ -13,13 +13,9 @@
 		{
 			// Vykreslí herní plán
 			Console.WriteLine($"\n=== Tah hráče {hrac.Jmeno} ===");
-			Console.WriteLine("Hrajeme hru Člověče, nezlob se! na linárním herním plánu.");
-			Console.WriteLine("Na vyjetí z domečku není potřeba šestka, ale do cílového domečku se musím trefit přesně.");
-			Console.WriteLine("V počátečním a cílovém domečku může stát libovolný počet figurek, jinak se vyhazuje.");
-			Console.WriteLine("V počátečním a cílovém domečku může stát libovolný počet figurek, jinak se vyhazuje.");
-			Console.WriteLine("Aktuální stav herního plánu:");
-			hra.HerniPlan.Vykresli();
 			Console.WriteLine($"Hod kostky: {hod}");
+			Console.WriteLine("\nAktuální stav herního plánu:");
+			hra.HerniPlan.Vykresli();
 
 			// Najde všechny figurky, kterými může hráč táhnout
 			var dostupneFigurky = ZjistiDostupneFigurky(hrac, hod);
@@ -60,7 +56,7 @@
 			int vyber;
 			do
 			{
-				Console.Write($"\nVyberte právě jednu figurku (1-{dostupneFigurky.Count}) a vrať její číslo (nic jiného nepiš):");
+				Console.Write($"\nVyberte figurku (1-{dostupneFigurky.Count}): ");
 				string? vstup = Console.ReadLine();
 
 				if (int.TryParse(vstup, out vyber) && vyber >= 1 && vyber <= dostupneFigurky.Count)

@@ -10,10 +10,11 @@ static Hrac HrajPartii()
 	HerniStrategie herniStrategieTahniPrvniFigurkou = new HerniStrategieTahniPrvniMoznouFigurkou(hra);
 	HerniStrategie herniStrategiePreferujVyhazovaniJinakPrvniMoznou = new HerniStrategiePreferujVyhazovaniJinakPrvniMoznou(hra);
 	HerniStrategie interaktivnivniHerniStrategie = new HerniStrategieInteraktivni(hra);
+	HerniStrategie aiHerniStrategie = new HerniStrategieAi(hra);
 
 	Hrac hrac1 = new Hrac("A:PrvniFigurkou", herniStrategieTahniPrvniFigurkou);
 	Hrac hrac2 = new Hrac("B:PreferujVyhazovaniJinakPrvniFigurkou", herniStrategiePreferujVyhazovaniJinakPrvniMoznou);
-	Hrac hrac3 = new Hrac("C:Interaktivni", interaktivnivniHerniStrategie);
+	Hrac hrac3 = new Hrac("C:AI", aiHerniStrategie);
 	//Hrac hracN = new Hrac("Martin", herniStrategiePreferujVyhazovaniJinakPrvniMoznou);
 
 
@@ -32,6 +33,7 @@ static Hrac HrajPartii()
 // MĚŘENÍ
 var vysledkyHer = new Dictionary<string, int>(); // Key: hráč, Value: počet vítěztví
 
+Console.OutputEncoding = System.Text.Encoding.UTF8;
 // vypneme výstup do konzole, abychom urychlili průběh
 //var originalConsoleOut = Console.Out;
 //Console.SetOut(TextWriter.Null);
