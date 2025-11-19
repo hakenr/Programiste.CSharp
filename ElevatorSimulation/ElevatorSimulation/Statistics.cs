@@ -5,12 +5,12 @@ namespace ElevatorSimulation;
 /// </summary>
 public class Statistics
 {
-	private readonly List<Request> _completedRequests = new();
+	private readonly List<RiderRequest> _completedRequests = new();
 
 	/// <summary>
 	/// Registers a completed request for statistics tracking.
 	/// </summary>
-	public void RecordCompletedRequest(Request request)
+	public void RecordCompletedRequest(RiderRequest request)
 	{
 		if (request.CompletedAt.HasValue)
 		{
@@ -66,6 +66,21 @@ public class Statistics
 	public int CompletedCount => _completedRequests.Count;
 
 	/// <summary>
+	/// Gets the total cumulative time (sum of all total times).
+	/// This is the primary metric for comparing strategies.
+	/// </summary>
+	public int TotalCumulativeTime
+	{
+		get
+		{
+			if (_completedRequests.Count == 0) return 0;
+			return _completedRequests
+				.Where(r => r.CompletedAt.HasValue)
+				.Sum(r => r.CompletedAt!.Value - r.CreatedAt);
+		}
+	}
+
+	/// <summary>
 	/// Prints a summary of statistics to the console.
 	/// </summary>
 	public void PrintSummary()
@@ -77,6 +92,7 @@ public class Statistics
 		Console.WriteLine($"Average wait time:       {AverageWaitTime:F2} steps");
 		Console.WriteLine($"Average travel time:     {AverageTravelTime:F2} steps");
 		Console.WriteLine($"Average total time:      {AverageTotalTime:F2} steps");
+		Console.WriteLine($"Total cumulative time:   {TotalCumulativeTime} steps");
 		Console.WriteLine(new string('=', 50));
 	}
 }

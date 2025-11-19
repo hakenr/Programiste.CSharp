@@ -15,11 +15,6 @@ public class Building
 	/// </summary>
 	public int MaxFloor { get; }
 
-	/// <summary>
-	/// Total number of floors in the building.
-	/// </summary>
-	public int FloorCount => MaxFloor - MinFloor + 1;
-
 	public Building(int minFloor, int maxFloor)
 	{
 		if (minFloor >= maxFloor)
@@ -36,7 +31,7 @@ public class Building
 	/// </summary>
 	public bool IsValidFloor(int floor)
 	{
-		return floor >= MinFloor && floor <= MaxFloor;
+		return (floor >= MinFloor) && (floor <= MaxFloor);
 	}
 
 	/// <summary>
@@ -50,7 +45,7 @@ public class Building
 	/// <summary>
 	/// Creates a request with random floors, ensuring they are different.
 	/// </summary>
-	public Request CreateRandomRequest(Random random, int currentTime)
+	public RiderRequest CreateRandomRequest(Random random, int currentTime)
 	{
 		int from = GetRandomFloor(random);
 		int to;
@@ -59,6 +54,6 @@ public class Building
 			to = GetRandomFloor(random);
 		} while (to == from);
 
-		return new Request(from, to, currentTime);
+		return new RiderRequest(from, to, currentTime);
 	}
 }

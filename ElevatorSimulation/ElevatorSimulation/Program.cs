@@ -1,64 +1,86 @@
+﻿using ElevatorSimulation.Strategies;
+
 namespace ElevatorSimulation;
 
 public static class Program
 {
+	public const int TimeForRequests = 20;
+	public const int RandomSeed = 42017;
+	public const int MaxFloor = 9;
+	public const double RequestDensityPercent = 0.30;
+
 	public static void Main()
 	{
 		Console.OutputEncoding = System.Text.Encoding.UTF8;
 		Console.WriteLine("=== ELEVATOR SIMULATION ===\n");
 
-		var building = new Building(minFloor: 0, maxFloor: 9);
-		var random = new Random(14); // Fixed seed for reproducibility
+		var building = new Building(minFloor: 0, maxFloor: MaxFloor);
 
 		// Test different strategies
-		RunSimulation("NAIVE STRATEGY", new NaiveStrategy(), building, random, simulationSteps: 50);
+		RunSimulation("FIFO STRATEGY", new FifoStrategy(), building, seed: RandomSeed);
 		Console.WriteLine("\n");
-		RunSimulation("DIRECTIONAL STRATEGY", new DirectionalStrategy(), building, random, simulationSteps: 50);
+		RunSimulation("NAIVE STRATEGY", new NaiveStrategy(), building, seed: RandomSeed);
 		Console.WriteLine("\n");
-		RunSimulation("OPTIMIZING STRATEGY", new OptimizingStrategy(), building, random, simulationSteps: 50);
+		RunSimulation("DIRECTIONAL STRATEGY", new DirectionalStrategy(), building, seed: RandomSeed);
+		Console.WriteLine("\n");
+		RunSimulation("OPTIMIZING STRATEGY", new OptimizingStrategy(), building, seed: RandomSeed);
 	}
 
-	private static void RunSimulation(string strategyName, IElevatorStrategy strategy, Building building, Random random, int simulationSteps)
+	private static void RunSimulation(string strategyName, IElevatorStrategy strategy, Building building, int seed)
 	{
-		Console.WriteLine($"\n{new string('=', 60)}");
+		Console.WriteLine(new string('=', 60));
 		Console.WriteLine($"  {strategyName}");
 		Console.WriteLine(new string('=', 60));
 
-		var elevator = new Elevator(strategy, building);
-		int time = 0;
-		int requestCount = 0;
+		var random = new Random(seed);
 
-		while (time < simulationSteps)
+		var elevator = new ElevatorSystem(strategy, building);
+
+		// Generate random requests (some may be null)
+		var randomRequests = Enumerable.Range(0, TimeForRequests)
+			.Select(_ => GenerateRandomRequest(building, random))
+			.ToList();
+
+		var requestEnumerator = randomRequests.GetEnumerator();
+		int requestNumber = 0;
+
+		while (true)
 		{
-			// Generate random requests (20% probability per step)
-			if (random.NextDouble() < 0.2)
+			RiderRequest request = null;
+			if (requestEnumerator.MoveNext())
 			{
-				var req = building.CreateRandomRequest(random, time);
-				elevator.AddRequest(req);
-				requestCount++;
-				Console.WriteLine($"[{time:00}] 📞 Request #{requestCount}: floor {req.From} → {req.To}");
+				request = requestEnumerator.Current;
 			}
 
-			elevator.Step(time);
-			time++;
-		}
-
-		// Handle remaining requests
-		Console.WriteLine($"\n[--] Processing remaining requests...");
-		while (elevator.PendingRequests.Count > 0 || elevator.ActiveRequest != null)
-		{
-			elevator.Step(time);
-			time++;
-
-			// Safety limit to prevent infinite loops
-			if (time > simulationSteps + 200)
+			if (request is not null)
 			{
-				Console.WriteLine($"[--] ⚠️ Timeout: stopping simulation with {elevator.PendingRequests.Count} pending requests");
+				requestNumber++;
+				Console.WriteLine($"[{elevator.CurrentTime:00}] 📞 Request #{requestNumber}: floor {request.From} → {request.To}");
+				elevator.ReceiveRequest(request);
+			}
+
+			var moveResult = elevator.TickOneTimeUnit();
+
+			// Stop when no more requests and elevator is idle
+			if ((elevator.CurrentTime >= TimeForRequests)
+				&& (elevator.PendingRequests.Count == 0)
+				&& (elevator.ActiveRiders.Count == 0))
+			{
 				break;
 			}
 		}
 
-		Console.WriteLine($"\n[{time:00}] ✅ Simulation completed");
+		Console.WriteLine($"\n[{elevator.CurrentTime:00}] ✅ Simulation completed");
 		elevator.Statistics.PrintSummary();
+	}
+
+	private static RiderRequest GenerateRandomRequest(Building building, Random random)
+	{
+		if (random.NextDouble() > RequestDensityPercent)
+		{
+			return null; // no request this tick
+		}
+
+		return building.CreateRandomRequest(random, 0); // Time will be set by elevator
 	}
 }
