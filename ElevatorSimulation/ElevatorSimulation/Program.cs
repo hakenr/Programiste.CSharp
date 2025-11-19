@@ -18,12 +18,12 @@ public static class Program
 
 		// Test different strategies
 		RunSimulation("FIFO STRATEGY", new FifoStrategy(), building, seed: RandomSeed);
-		Console.WriteLine("\n");
-		RunSimulation("NAIVE STRATEGY", new NaiveStrategy(), building, seed: RandomSeed);
-		Console.WriteLine("\n");
-		RunSimulation("DIRECTIONAL STRATEGY", new DirectionalStrategy(), building, seed: RandomSeed);
-		Console.WriteLine("\n");
-		RunSimulation("OPTIMIZING STRATEGY", new OptimizingStrategy(), building, seed: RandomSeed);
+		//Console.WriteLine("\n");
+		//RunSimulation("STRATEGY 2", new Strategy2(), building, seed: RandomSeed);
+		//Console.WriteLine("\n");
+		//RunSimulation("STRATEGY 3", new Strategy3(), building, seed: RandomSeed);
+		//Console.WriteLine("\n");
+		//RunSimulation("STRATEGY 4", new Strategy4(), building, seed: RandomSeed);
 	}
 
 	private static void RunSimulation(string strategyName, IElevatorStrategy strategy, Building building, int seed)
