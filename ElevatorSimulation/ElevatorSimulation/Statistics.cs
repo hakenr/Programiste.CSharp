@@ -21,7 +21,7 @@ public class Statistics
 	/// <summary>
 	/// Gets the average waiting time (time from request creation to pickup).
 	/// </summary>
-	public double AverageWaitTime
+	public virtual double AverageWaitTime
 	{
 		get
 		{
@@ -35,7 +35,7 @@ public class Statistics
 	/// <summary>
 	/// Gets the average travel time (time from pickup to dropoff).
 	/// </summary>
-	public double AverageTravelTime
+	public virtual double AverageTravelTime
 	{
 		get
 		{
@@ -49,7 +49,7 @@ public class Statistics
 	/// <summary>
 	/// Gets the average total time (from request creation to completion).
 	/// </summary>
-	public double AverageTotalTime
+	public virtual double AverageTotalTime
 	{
 		get
 		{
@@ -63,13 +63,13 @@ public class Statistics
 	/// <summary>
 	/// Gets the number of completed requests.
 	/// </summary>
-	public int CompletedCount => _completedRequests.Count;
+	public virtual int CompletedCount => _completedRequests.Count;
 
 	/// <summary>
 	/// Gets the total cumulative time (sum of all total times).
 	/// This is the primary metric for comparing strategies.
 	/// </summary>
-	public int TotalCumulativeTime
+	public virtual int TotalCumulativeTime
 	{
 		get
 		{
@@ -94,5 +94,41 @@ public class Statistics
 		Console.WriteLine($"Average total time:      {AverageTotalTime:F2} steps");
 		Console.WriteLine($"Total cumulative time:   {TotalCumulativeTime} steps");
 		Console.WriteLine(new string('=', 50));
+	}
+
+	/// <summary>
+	/// Creates a Statistics object with pre-calculated aggregated values.
+	/// Used for combining statistics from multiple simulation runs.
+	/// </summary>
+	internal static Statistics CreateAggregated(int completedCount, double avgWait, double avgTravel, double avgTotal, int totalCumulative)
+	{
+		return new AggregatedStatistics(completedCount, avgWait, avgTravel, avgTotal, totalCumulative);
+	}
+
+	/// <summary>
+	/// Internal class for storing pre-calculated aggregated statistics.
+	/// </summary>
+	private class AggregatedStatistics : Statistics
+	{
+		private readonly int _completedCount;
+		private readonly double _avgWait;
+		private readonly double _avgTravel;
+		private readonly double _avgTotal;
+		private readonly int _totalCumulative;
+
+		public AggregatedStatistics(int completedCount, double avgWait, double avgTravel, double avgTotal, int totalCumulative)
+		{
+			_completedCount = completedCount;
+			_avgWait = avgWait;
+			_avgTravel = avgTravel;
+			_avgTotal = avgTotal;
+			_totalCumulative = totalCumulative;
+		}
+
+		public override double AverageWaitTime => _avgWait;
+		public override double AverageTravelTime => _avgTravel;
+		public override double AverageTotalTime => _avgTotal;
+		public override int CompletedCount => _completedCount;
+		public override int TotalCumulativeTime => _totalCumulative;
 	}
 }

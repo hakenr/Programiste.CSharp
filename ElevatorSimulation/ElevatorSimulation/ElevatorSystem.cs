@@ -42,6 +42,11 @@ public class ElevatorSystem
 	/// </summary>
 	public int CurrentTime { get; private set; }
 
+	/// <summary>
+	/// If true, suppresses console output during simulation.
+	/// </summary>
+	public bool SilentMode { get; set; } = false;
+
 	private IElevatorStrategy _strategy;
 
 	/// <summary>
@@ -95,12 +100,14 @@ public class ElevatorSystem
 			case MoveResult.MoveUp:
 				CurrentElevatorFloor++;
 				CurrentElevatorDirection = Direction.Up;
-				Console.WriteLine($"[{CurrentTime:00}] ⬆️  Move up to floor {CurrentElevatorFloor}");
+				if (!SilentMode)
+					Console.WriteLine($"[{CurrentTime:00}] ⬆️  Move up to floor {CurrentElevatorFloor}");
 				break;
 			case MoveResult.MoveDown:
 				CurrentElevatorFloor--;
 				CurrentElevatorDirection = Direction.Down;
-				Console.WriteLine($"[{CurrentTime:00}] ⬇️  Move down to floor {CurrentElevatorFloor}");
+				if (!SilentMode)
+					Console.WriteLine($"[{CurrentTime:00}] ⬇️  Move down to floor {CurrentElevatorFloor}");
 				break;
 			case MoveResult.OpenDoors:
 				// Drop off riding passengers at current floor
@@ -113,7 +120,8 @@ public class ElevatorSystem
 					request.CompletedAt = CurrentTime;
 					Statistics.RecordCompletedRequest(request);
 					ActiveRiders.Remove(request);
-					Console.WriteLine($"[{CurrentTime:00}] 🚪 Drop off passenger at floor {CurrentElevatorFloor}");
+					if (!SilentMode)
+						Console.WriteLine($"[{CurrentTime:00}] 🚪 Drop off passenger at floor {CurrentElevatorFloor}");
 				}
 
 				// Pick up waiting passengers at current floor
@@ -127,12 +135,14 @@ public class ElevatorSystem
 					rider.PickedUpAt = CurrentTime;
 					PendingRequests.Remove(rider);
 					ActiveRiders.Add(rider);
-					Console.WriteLine($"[{CurrentTime:00}] 🚪 Pick up passenger at floor {CurrentElevatorFloor} (→ {rider.To})");
+					if (!SilentMode)
+						Console.WriteLine($"[{CurrentTime:00}] 🚪 Pick up passenger at floor {CurrentElevatorFloor} (→ {rider.To})");
 				}
 				break;
 			case MoveResult.NoAction:
 				CurrentElevatorDirection = Direction.Idle;
-				Console.WriteLine($"[{CurrentTime:00}] 🛑 No action (idle)");
+				if (!SilentMode)
+					Console.WriteLine($"[{CurrentTime:00}] 🛑 No action (idle)");
 				break;
 		}
 
