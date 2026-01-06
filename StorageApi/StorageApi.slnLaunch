@@ -1,0 +1,15 @@
+[
+  {
+    "Name": "Server + Client",
+    "Projects": [
+      {
+        "Path": "StorageApi.Client\\StorageApi.Client.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "StorageApi.Server\\StorageApi.Server.csproj",
+        "Action": "Start"
+      }
+    ]
+  }
+]
