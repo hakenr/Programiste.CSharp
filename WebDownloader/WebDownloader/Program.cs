@@ -1,27 +1,15 @@
-﻿using System;
-using System.IO;
-using System.Net.Http;
 using System.Text.RegularExpressions;
 
-namespace WebDownloader
+HttpClient client = new HttpClient();
+string stranka = client.GetStringAsync("https://www.mensagymnazium.cz/cs/kontakty").Result;
+
+Regex re = new Regex(@"<span class=""name"">(?<jmeno>.*)</span>");
+foreach (Match match in re.Matches(stranka))
 {
-	public class Program
-	{
-		public static void Main(string[] args)
-		{
-			HttpClient client = new HttpClient();
-			string stranka = client.GetStringAsync("https://www.mensagymnazium.cz/cs/kontakty").Result;
-
-			Regex re = new Regex(@"<span class=""name"">(?<jmeno>.*)</span>");
-			foreach (Match match in re.Matches(stranka))
-			{
-				Console.WriteLine(match.Groups["jmeno"]);
-			}
-
-			//Console.WriteLine(stranka);
-		}
-	}
+	Console.WriteLine(match.Groups["jmeno"]);
 }
+
+//Console.WriteLine(stranka);
 
 //			HttpRequestMessage request = new HttpRequestMessage();
 //			request.Method = HttpMethod.Get;
