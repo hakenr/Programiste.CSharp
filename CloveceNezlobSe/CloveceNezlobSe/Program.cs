@@ -3,19 +3,24 @@ using CloveceNezlobSe;
 
 static Hrac HrajPartii()
 {
-	HerniPlan herniPlan = new LinearniHerniPlan(15);
+	HerniPlan herniPlan = new LinearniHerniPlan(30);
 
 	Hra hra = new Hra(herniPlan);
 
 	HerniStrategie herniStrategieTahniPrvniFigurkou = new HerniStrategieTahniPrvniMoznouFigurkou(hra);
 	HerniStrategie herniStrategiePreferujVyhazovaniJinakPrvniMoznou = new HerniStrategiePreferujVyhazovaniJinakPrvniMoznou(hra);
+	HerniStrategie interaktivnivniHerniStrategie = new HerniStrategieInteraktivni(hra);
+	HerniStrategie aiHerniStrategie = new HerniStrategieAi(hra);
 
-	Hrac hrac1 = new Hrac("Karel:PrvniFigurkou", herniStrategieTahniPrvniFigurkou);
-	Hrac hrac2 = new Hrac("Robert:PreferujVyhazovaniJinakPrvniFigurkou", herniStrategiePreferujVyhazovaniJinakPrvniMoznou);
+	Hrac hrac1 = new Hrac("A:PrvniFigurkou", herniStrategieTahniPrvniFigurkou);
+	Hrac hrac2 = new Hrac("B:PreferujVyhazovaniJinakPrvniFigurkou", herniStrategiePreferujVyhazovaniJinakPrvniMoznou);
+	Hrac hrac3 = new Hrac("C:AI", aiHerniStrategie);
 	//Hrac hracN = new Hrac("Martin", herniStrategiePreferujVyhazovaniJinakPrvniMoznou);
+
 
 	hra.PridejHrace(hrac1);
 	hra.PridejHrace(hrac2);
+	hra.PridejHrace(hrac3);
 	//hra.PridejHrace(hracN);
 	hra.NastavNahodnePoradiHracu();
 
@@ -28,19 +33,22 @@ static Hrac HrajPartii()
 // MĚŘENÍ
 var vysledkyHer = new Dictionary<string, int>(); // Key: hráč, Value: počet vítěztví
 
+Console.OutputEncoding = System.Text.Encoding.UTF8;
 // vypneme výstup do konzole, abychom urychlili průběh
-var originalConsoleOut = Console.Out;
-Console.SetOut(TextWriter.Null);
+//var originalConsoleOut = Console.Out;
+//Console.SetOut(TextWriter.Null);
+
+const int pocetPartii = 1;
 var sw = Stopwatch.StartNew();
 
-for (int i = 0; i < 50000; i++)
+for (int i = 0; i < pocetPartii; i++)
 {
 	Hrac vitez = HrajPartii();
 	vysledkyHer[vitez.Jmeno] = vysledkyHer.GetValueOrDefault(vitez.Jmeno, 0) + 1;
 }
 
 // obnovení výstupu do konzole
-Console.SetOut(originalConsoleOut);
+//Console.SetOut(originalConsoleOut);
 Console.WriteLine($"{sw.ElapsedMilliseconds:n2} ms");
 
 foreach (var vysledek in vysledkyHer.OrderByDescending(v => v.Value))
