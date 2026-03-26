@@ -22,8 +22,8 @@ jobs:
     - name: List all solutions
       run: |
         echo "Found the following solution files:"
-        find . -name "*.sln" -type f | sort
-        echo "Total solutions: $(find . -name "*.sln" -type f | wc -l)"
+        find . \( -name "*.sln" -o -name "*.slnx" \) -type f | sort
+        echo "Total solutions: $(find . \( -name '*.sln' -o -name '*.slnx' \) -type f | wc -l)"
         
     - name: Build all solutions
       shell: bash
@@ -49,7 +49,7 @@ jobs:
             echo "❌ Build failed for $solution"
             failed_solutions+=("$solution")
           fi
-        done < <(find . -name "*.sln" -type f | sort)
+        done < <(find . \( -name "*.sln" -o -name "*.slnx" \) -type f | sort)
         
         # Print summary
         echo ""
