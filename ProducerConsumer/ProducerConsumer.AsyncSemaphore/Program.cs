@@ -27,7 +27,10 @@ var producerTask = Task.Run(async () =>
 		await Task.Delay(50);
 	}
 
-	finished = true;
+	lock (gate)
+	{
+		finished = true;
+	}
 	available.Release(); // probudíme consumera, aby si všiml ukončení
 });
 
