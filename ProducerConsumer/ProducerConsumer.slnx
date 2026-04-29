@@ -1,0 +1,10 @@
+<Solution>
+  <Folder Name="/Solution Items/">
+    <File Path="README.md" />
+  </Folder>
+  <Project Path="ProducerConsumer.Naive/ProducerConsumer.Naive.csproj" />
+  <Project Path="ProducerConsumer.Lock/ProducerConsumer.Lock.csproj" />
+  <Project Path="ProducerConsumer.MonitorWait/ProducerConsumer.MonitorWait.csproj" />
+  <Project Path="ProducerConsumer.AsyncSemaphore/ProducerConsumer.AsyncSemaphore.csproj" />
+  <Project Path="ProducerConsumer.Channel/ProducerConsumer.Channel.csproj" />
+</Solution>
